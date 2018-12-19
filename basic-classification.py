@@ -19,7 +19,16 @@ plt.imshow(train_images[0])
 plt.colorbar()
 plt.grid(False)
 
+# We scale these values to a range of 0 to 1 before feeding to the neural network model.
+# For this, cast the datatype of the image components from an integer to a float, and divide by 255.
+
+# It's important that the training set and the testing set are preprocessed in the same way.
+
+train_images = train_images / 255.0
+test_images = test_images / 255.0
+
 # View the first 25 images, make sure the data is in the correct format
+
 plt.figure(figsize=(10,10))
 for i in range(25):
     plt.subplot(5, 5, i + 1)
